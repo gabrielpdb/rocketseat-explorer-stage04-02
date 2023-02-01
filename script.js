@@ -1,20 +1,27 @@
 /*
-  Capturar 2 números
-  e fazer as operações matemáticas
-  de soma, subtração, multiplicação,
-  divisão e resto da divisão.
+  Solicitar o nome do aluno e as 3 notas
+  do bimestre calcular a média daquele aluno.
 
-  E para cada operação, mostrar um alerta
-  com o resultado.
+  A média positiva deverá ser maior que 6
+
+  Se o aluno passou no bimestre, dar os 
+  parabéns.
+
+  Se o aluno não passou no bimestre, 
+  motivar o aluno a dar seu melhor na prova
+  de recuperação.
+
+  Em ambos os casos, mostre uma mensagem com o nome do aluno e a nota
 */
 
-let numberOne = Number(prompt('Número 1: '))
-let numberTwo = Number(prompt('Número 2: '))
+let studentName = prompt('Nome do aluno:')
+let n1 = Number(prompt('Nota 1:'))
+let n2 = Number(prompt('Nota 2:'))
+let n3 = Number(prompt('Nota 3:'))
+let average = (n1 + n2 + n3) / 3
 
-alert(`${numberOne} | ${numberTwo}
-Soma: ${numberOne + numberTwo}
-Subtração: ${numberOne - numberTwo}
-Multiplicação: ${numberOne * numberTwo}
-Divisão: ${numberOne / numberTwo}
-Resto da divisão: ${numberOne % numberTwo}
-`)
+if (average >= 6) {
+  alert(`Parabéns ${studentName}, você foi aprovado com média ${average}`)
+} else {
+  alert(`Bah ${studentName}, tu não passou cara, tua média foi ${average}`)
+}
