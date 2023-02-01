@@ -18,7 +18,7 @@ let studentName = prompt('Nome do aluno:')
 let n1 = Number(prompt('Nota 1:'))
 let n2 = Number(prompt('Nota 2:'))
 let n3 = Number(prompt('Nota 3:'))
-let average = (n1 + n2 + n3) / 3
+let average = ((n1 + n2 + n3) / 3).toFixed(2)
 
 if (average >= 6) {
   alert(`Parabéns ${studentName}, você foi aprovado com média ${average}`)
