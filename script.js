@@ -1,33 +1,51 @@
 /*
-  ** Jogo da advinhação **
 
-  Apresente a mensagem ao usuário:
-  "Advinhe o número que estou pensando? Está entre 0 e 10"
+  Faça um programa que tenha um menu e apresente a seguinte mensagem:
+  
+  Olá usuário! Digite o número da opção desejada
 
-  Crie um lógica para gerar um número aleatório 
-  e verificar se o número digitado é o mesmo que o aleatório gerado pelo sistema.
+    1. Cadastrar um item na lista
+    2. Mostrar itens cadastrados
+    3. Sair do programa
+  
+  --- 
+  O programa deverá capturar o número digitado pelo usuário e mostrar o seguintes cenários:
 
-  Enquanto o usuário não adivinhar o número, mostrar a mensagem:
-  "Erro, tente novamente:"
+  Caso o usuário digite 1, ele poderá cadastrar um item em uma lista
+  Caso o usuário digite 2, ele poderá ver os itens cadastrados
+    Se não houver nenhum item cadastrado, mostrar a mensagem: 
+      "Não existem itens cadastrados"
+  Caso o usuário digite 3, a aplicação deverá ser encerrada.
 
-  Caso o usuário acerte o número, apresentar a mensagem:
-  "Parabéns! Você advinhou o número em x tentativas"
-
-  Substitua o "x" da mensagem, pelo número de tentativas
 */
+let finish = false
+let option = 0
+let items = []
 
-let number = Math.floor(Math.random() * 10)
-alert(number)
-let tries = 0
-let guess
+alert('foi')
 
 do {
-  if (tries == 0) {
-    guess = prompt('Adivinhe o número que estou pensando. Está entre 0 e 10')
-  } else {
-    guess = prompt('Erro, tente novamente:')
-  }
-  tries++
-} while (guess != number)
+  option = prompt(`Olá usuário! Digite o número da opção desejada
+  
+1. Cadastrar um item na lista
+2. Mostrar itens cadastrados
+3. Sair do programa`)
 
-alert(`Parabéns! Você adivinhou o número em ${tries} tentativas`)
+  option = Number(option)
+
+  switch (option) {
+    case 1:
+      items.push(prompt('Informe um item:'))
+      break
+    case 2:
+      alert(items)
+      break
+    case 3:
+      finish = true
+      break
+    default:
+      break
+  }
+} while (!finish)
+
+alert('Obrigado por usar meu sistema')
